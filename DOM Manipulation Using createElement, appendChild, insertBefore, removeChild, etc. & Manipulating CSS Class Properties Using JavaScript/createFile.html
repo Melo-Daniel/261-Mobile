@@ -12,7 +12,8 @@
     </ul>
 
     <input type="text" name="" id= "txt" value="">
-    <button type="button" onclick="addElement()" name="button">Add</button>
+    <button type="button" onclick="addElement()" name="button">Add</button><br>
+    <button type="button" onclick="removeElement()" name="button">Remove</button>
     <script type="text/javascript">
       function addElement(){
         var n = document.createElement("LI");
@@ -20,6 +21,11 @@
         var txtnode = document.createTextNode(txt);
         n.appendChild(txtnode);
         document.getElementById("list").appendChild(n);
+      }
+
+      function removeElement(){
+        var list = document.getElementById("list");
+        list.removeChild(list.childNodes[0]);
       }
     </script>
   </body>

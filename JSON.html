@@ -5,9 +5,10 @@
     <title></title>
     <script type="text/javascript">
       function fillJSON(){
-        var obj = { "name":"Daniel", "age":22, "city":"Natal"};
+        var obj = {"name":"Daniel", "age":22, "address":{"city":"Natal","street":"Avenida Paulista","number":"2171"}};
         var myJSON = JSON.stringify(obj);
         document.getElementById("demo").innerHTML = myJSON;
+        document.getElementById("demo").innerHTML += obj.address.street;
       }
     </script>
   </head>
