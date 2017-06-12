@@ -12,7 +12,9 @@
     </ul>
 
     <input type="text" name="" id= "txt" value="">
-    <button type="button" onclick="addElement()" name="button">Add</button><br>
+    <button type="button" onclick="addElement()" name="button">Add After</button>
+    <button type="button" onclick="addBefore()" name="button">Add Before</button>
+    <br>
     <button type="button" onclick="removeElement()" name="button">Remove</button>
     <script type="text/javascript">
       function addElement(){
@@ -27,6 +29,16 @@
         var list = document.getElementById("list");
         list.removeChild(list.childNodes[0]);
       }
+
+      function addBefore() {
+        var newItem = document.createElement("LI");
+        var txt = document.getElementById("txt").value;
+        var textnode = document.createTextNode(txt);
+        newItem.appendChild(textnode);
+
+        var list = document.getElementById("list");
+        list.insertBefore(newItem, list.childNodes[0]);
+    }
     </script>
   </body>
 </html>
